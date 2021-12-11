@@ -14,7 +14,7 @@ public class Exam {
 
     private String name;
     private Date date;
-    private List<Questions> Questions;
+    private Question Questions;
 
     public long getId() {
         return id;
@@ -40,11 +40,11 @@ public class Exam {
         this.date = date;
     }
 
-    public List<com.example.demo.Model.Questions> getQuestions() {
+    public Question getQuestions() {
         return Questions;
     }
 
-    public void setQuestions(List<com.example.demo.Model.Questions> questions) {
+    public void setQuestions(Question questions) {
         Questions = questions;
     }
 }

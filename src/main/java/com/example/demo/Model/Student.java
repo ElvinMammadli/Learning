@@ -1,6 +1,8 @@
 package com.example.demo.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -19,14 +21,63 @@ public class Student {
     private String password;
     private String name;
     private String surname;
-    private List<Class> classes;
-    private List<Exam> exams;
-    private List<Float> results;
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY,targetEntity=Class.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "CLASS_ID",referencedColumnName = "id")
+    private Class classes;
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY,targetEntity=Exam.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "EXAM_ID",referencedColumnName = "id")
+    private Exam exams;
+
+    private Float[] results;
 
     public Student(long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Class getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Class classes) {
+        this.classes = classes;
+    }
+
+    public Exam getExams() {
+        return exams;
+    }
+
+    public void setExams(Exam exams) {
+        this.exams = exams;
+    }
+
+    public Float[] getResults() {
+        return results;
+    }
+
+    public void setResults(Float[] results) {
+        this.results = results;
     }
 
     public long getId() {

@@ -13,9 +13,9 @@ public class Class {
 
     private String name;
     private String explanation;
-    private List<Student> students;
+    private Student students;
     private Teacher teacher;
-    private List<Exam> exams;
+    private Exam exams;
 
     public long getId() {
         return id;
@@ -41,11 +41,11 @@ public class Class {
         this.explanation = explanation;
     }
 
-    public List<Student> getStudents() {
+    public Student getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(Student students) {
         this.students = students;
     }
 
@@ -57,11 +57,11 @@ public class Class {
         this.teacher = teacher;
     }
 
-    public List<Exam> getExams() {
+    public Exam getExams() {
         return exams;
     }
 
-    public void setExams(List<Exam> exams) {
+    public void setExams(Exam exams) {
         this.exams = exams;
     }
 }
