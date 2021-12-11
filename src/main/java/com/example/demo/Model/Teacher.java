@@ -2,6 +2,8 @@ package com.example.demo.Model;
 
 
 import javax.persistence.*;
+
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,10 +19,51 @@ public class Teacher {
 
     private String password;
 
+    private String name;
+    private String surname;
+
+    private List<Class> classes;
+
+
     public Teacher(long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+
+    public Teacher(long id, String username, String password, String name, String surname, List<Class> classes) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.classes = classes;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public List<Class> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<Class> classes) {
+        this.classes = classes;
     }
 
     public long getId() {
