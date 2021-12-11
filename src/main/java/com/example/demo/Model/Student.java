@@ -2,6 +2,7 @@ package com.example.demo.Model;
 
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +17,11 @@ public class Student {
     private String username;
 
     private String password;
+    private String name;
+    private String surname;
+    private List<Class> classes;
+    private List<Exam> exams;
+    private List<Float> results;
 
     public Student(long id, String username, String password) {
         this.id = id;
