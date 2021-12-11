@@ -22,7 +22,6 @@ public class Teacher {
     private String name;
     private String surname;
 
-    private Class classes;
 
 
     public Teacher(long id, String username, String password) {
@@ -32,13 +31,12 @@ public class Teacher {
     }
 
 
-    public Teacher(long id, String username, String password, String name, String surname, Class classes) {
+    public Teacher(long id, String username, String password, String name, String surname) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
         this.surname = surname;
-        this.classes = classes;
     }
 
 
@@ -58,13 +56,9 @@ public class Teacher {
         this.surname = surname;
     }
 
-    public Class getClasses() {
-        return classes;
-    }
 
-    public void setClasses(Class classes) {
-        this.classes = classes;
-    }
+
+
 
     public long getId() {
         return id;
