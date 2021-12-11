@@ -14,7 +14,6 @@ public class Exam {
 
     private String name;
     private Date date;
-    private Question Questions;
 
     public long getId() {
         return id;
@@ -40,11 +39,5 @@ public class Exam {
         this.date = date;
     }
 
-    public Question getQuestions() {
-        return Questions;
-    }
 
-    public void setQuestions(Question questions) {
-        Questions = questions;
-    }
 }

@@ -1,10 +1,8 @@
 package com.example.demo.Model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -22,15 +20,9 @@ public class Student {
     private String name;
     private String surname;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity=Class.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "CLASS_ID",referencedColumnName = "id")
-    private Class classes;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity=Exam.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "EXAM_ID",referencedColumnName = "id")
-    private Exam exams;
+
+
 
     private Float[] results;
 
@@ -56,21 +48,7 @@ public class Student {
         this.surname = surname;
     }
 
-    public Class getClasses() {
-        return classes;
-    }
 
-    public void setClasses(Class classes) {
-        this.classes = classes;
-    }
-
-    public Exam getExams() {
-        return exams;
-    }
-
-    public void setExams(Exam exams) {
-        this.exams = exams;
-    }
 
     public Float[] getResults() {
         return results;
