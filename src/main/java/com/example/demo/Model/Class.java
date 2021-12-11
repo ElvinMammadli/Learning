@@ -1,7 +1,9 @@
 package com.example.demo.Model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="Class")
@@ -14,13 +16,14 @@ public class Class {
     private String name;
     private String explanation;
 
+
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "Class_Student",
             joinColumns = { @JoinColumn(name = "class_id") },
             inverseJoinColumns = { @JoinColumn(name = "student_id") }
     )
-    private Student students;
+    private Set<Student> students = new HashSet<>();
 
     @OneToOne(cascade = { CascadeType.ALL })
     @JoinTable(
@@ -36,7 +39,7 @@ public class Class {
             joinColumns = { @JoinColumn(name = "class_id") },
             inverseJoinColumns = { @JoinColumn(name = "exam_id") }
     )
-    private Exam exams;
+    private Set<Exam> exams = new HashSet<>();
 
     public long getId() {
         return id;
@@ -62,13 +65,22 @@ public class Class {
         this.explanation = explanation;
     }
 
-    public Student getStudents() {
+    public Set<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
+
+    public Set<Exam> getExams() {
+        return exams;
+    }
+
+    public void setExams(Set<Exam> exams) {
+        this.exams = exams;
+    }
+
 
     public Teacher getTeacher() {
         return teacher;
@@ -78,11 +90,5 @@ public class Class {
         this.teacher = teacher;
     }
 
-    public Exam getExams() {
-        return exams;
-    }
 
-    public void setExams(Exam exams) {
-        this.exams = exams;
-    }
 }

@@ -2,7 +2,8 @@ package com.example.demo.Model;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="Exam")
@@ -14,6 +15,23 @@ public class Exam {
 
     private String name;
     private Date date;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "Exam_Question",
+            joinColumns = { @JoinColumn(name = "exam_id") },
+            inverseJoinColumns = { @JoinColumn(name = "question_id") }
+    )
+    private Set<Question> questions = new HashSet<>();
+
+
+    public Set<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(Set<Question> questions) {
+        this.questions = questions;
+    }
 
     public long getId() {
         return id;

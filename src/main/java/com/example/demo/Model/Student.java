@@ -16,6 +16,8 @@ public class Student {
     @Column(name="username",unique = true)
     private String username;
 
+
+
     private String password;
     private String name;
     private String surname;
