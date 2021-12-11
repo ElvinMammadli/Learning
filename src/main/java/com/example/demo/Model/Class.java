@@ -13,8 +13,29 @@ public class Class {
 
     private String name;
     private String explanation;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "Class_Student",
+            joinColumns = { @JoinColumn(name = "class_id") },
+            inverseJoinColumns = { @JoinColumn(name = "student_id") }
+    )
     private Student students;
+
+    @OneToOne(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "Class_Teacher",
+            joinColumns = { @JoinColumn(name = "class_id") },
+            inverseJoinColumns = { @JoinColumn(name = "teacher_id") }
+    )
     private Teacher teacher;
+
+    @OneToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "Class_Exam",
+            joinColumns = { @JoinColumn(name = "class_id") },
+            inverseJoinColumns = { @JoinColumn(name = "exam_id") }
+    )
     private Exam exams;
 
     public long getId() {
