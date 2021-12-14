@@ -21,7 +21,7 @@ public class TeacherController {
 
     private static final Logger log = LoggerFactory.getLogger(TeacherController.class);
 
-    @PostMapping("/api/1/student/login")
+    @PostMapping("/api/1/teacher/login")
     public Teacher validateTeacher(@RequestBody Teacher requestedTeacher) throws Exception {
         Teacher teacher=teacherService.findByUsername(requestedTeacher.getUsername());
         if(teacher==null){
@@ -43,6 +43,7 @@ public class TeacherController {
     public void createTeacher(@RequestBody Teacher teacherRequested) {
         teacherService.save(teacherRequested);
     }
+
 
 
 
