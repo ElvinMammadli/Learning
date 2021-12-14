@@ -10,4 +10,6 @@ public interface IExamRepository extends JpaRepository<Exam,Long> {
 
     public Optional<Exam> findById(Long id);
 
+    public List<Exam> findAll();
+
 }

@@ -24,5 +24,8 @@ public class ExamService {
         return iExamRepository.findById(id);
     }
 
+    public List<Exam> findAll() {
+        return iExamRepository.findAll();
+    }
 
 }

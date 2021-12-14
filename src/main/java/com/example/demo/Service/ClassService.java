@@ -1,6 +1,8 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.Classes;
+import com.example.demo.Model.Exam;
+import com.example.demo.Model.Student;
 import com.example.demo.Repository.IClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,4 +52,11 @@ public class ClassService {
         else return iClassRepository.findAllByStudentsId(id);
     }
 
+    public List<Student> getStudentsById(Long id) {
+        return iClassRepository.getStudentsById(id);
+    }
+
+    public List<Exam> getExamsById(Long id){
+        return iClassRepository.getExamsById(id);
+    }
 }

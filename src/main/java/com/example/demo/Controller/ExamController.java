@@ -29,5 +29,9 @@ public class ExamController {
         return examService.findById(id);
     }
 
+    @GetMapping("/api/1/exam/all")
+    public List<Exam> findAll(){
+        return examService.findAll();
+    }
 
 }
