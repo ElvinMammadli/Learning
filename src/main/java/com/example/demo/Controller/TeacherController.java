@@ -40,8 +40,8 @@ public class TeacherController {
 
     @PostMapping("/api/1/student/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createStudent(@RequestBody Student requestedStudent) {
-        teacherService.save(requestedStudent);
+    public void createStudent(@RequestBody Teacher teacherRequested) {
+        teacherService.save(teacherRequested);
     }
 
 
