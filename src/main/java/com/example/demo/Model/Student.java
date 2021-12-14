@@ -4,6 +4,7 @@ package com.example.demo.Model;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="Student")
@@ -16,17 +17,21 @@ public class Student {
     @Column(name="username",unique = true)
     private String username;
 
-
-
     private String password;
     private String name;
     private String surname;
 
+    public Student() {
+    }
 
+    @OneToMany(cascade = { CascadeType.MERGE })
+    @JoinTable(
+            name = "Exam_Student",
+            joinColumns = { @JoinColumn(name = "student_id") },
+            inverseJoinColumns = { @JoinColumn(name = "result_id") }
+    )
+    private Set<Result> results ;
 
-
-
-    private Float[] results;
 
     public Student(long id, String username, String password) {
         this.id = id;
@@ -51,14 +56,6 @@ public class Student {
     }
 
 
-
-    public Float[] getResults() {
-        return results;
-    }
-
-    public void setResults(Float[] results) {
-        this.results = results;
-    }
 
     public long getId() {
         return id;

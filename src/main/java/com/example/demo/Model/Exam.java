@@ -24,6 +24,13 @@ public class Exam {
     )
     private Set<Question> questions = new HashSet<>();
 
+    @ManyToMany(cascade = { CascadeType.MERGE })
+    @JoinTable(
+            name = "Exam_Student",
+            joinColumns = { @JoinColumn(name = "exam_id") },
+            inverseJoinColumns = { @JoinColumn(name = "student_id") }
+    )
+    private Set<Student> students = new HashSet<>();
 
     public Set<Question> getQuestions() {
         return questions;

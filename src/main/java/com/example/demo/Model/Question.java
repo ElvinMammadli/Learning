@@ -20,7 +20,7 @@ public class Question {
             joinColumns = { @JoinColumn(name = "question_id") },
             inverseJoinColumns = { @JoinColumn(name = "answer_id") }
     )
-    private Set<Answer> answers = new HashSet<>();
+    private Set<Answer> answers ;
 
     private String true_answer;
 
