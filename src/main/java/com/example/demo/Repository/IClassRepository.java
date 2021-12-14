@@ -8,5 +8,5 @@ import java.util.List;
 public interface IClassRepository extends JpaRepository<Classes,Long> {
     List<Classes> findAllByTeacherId(Long id);
 
-    List<Classes> findAllByStudentId(Long id);
+    List<Classes> findAllByStudentsId(Long id);
 }

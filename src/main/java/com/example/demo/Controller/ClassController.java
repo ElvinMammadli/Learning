@@ -26,10 +26,11 @@ public class ClassController {
     }
 
     @GetMapping("/api/1/class/student/{id}")
-    public  List<Classes>  getClassByStudentId(@PathVariable Long id) throws Exception {
-        List<Classes> classes  =classService.getClassesByStudentId(id);
+    public  List<Classes>  getClassByStudentsId(@PathVariable Long id) throws Exception {
+        List<Classes> classes  =classService.getClassesByStudentsId(id);
         return classes;
     }
+
 
 
 

@@ -42,11 +42,12 @@ public class ClassService {
         else return iClassRepository.findAllByTeacherId(id);
     }
 
-    public List<Classes> getClassesByStudentId(Long id) throws Exception {
+    public List<Classes> getClassesByStudentsId(Long id) throws Exception {
         List<Classes> classes=iClassRepository.findAll();
         if(classes==null){
             throw new Exception("You haven't got any reservation yet");
         }
-        else return iClassRepository.findAllByStudentId(id);
+        else return iClassRepository.findAllByStudentsId(id);
     }
+
 }
