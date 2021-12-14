@@ -19,10 +19,18 @@ public class ClassController {
         classService.save(requestedClass);
     }
 
-    @GetMapping("/api/1/class/{id}")
+    @GetMapping("/api/1/class/teacher/{id}")
     public  List<Classes>  getClassByTeacherId(@PathVariable Long id) throws Exception {
-        List<Classes> classes  =classService.getReservationsByTeacherId(id);
-        return (List<Classes>)classes;
+        List<Classes> classes  =classService.getClassesByTeacherId(id);
+        return classes;
     }
+
+    @GetMapping("/api/1/class/student/{id}")
+    public  List<Classes>  getClassByStudentId(@PathVariable Long id) throws Exception {
+        List<Classes> classes  =classService.getClassesByStudentId(id);
+        return classes;
+    }
+
+
 
 }

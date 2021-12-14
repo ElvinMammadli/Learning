@@ -31,11 +31,22 @@ public class ClassService {
     }
 
 
-    public List<Classes> getReservationsByTeacherId(Long id) throws Exception {
+
+
+
+    public List<Classes> getClassesByTeacherId(Long id) throws Exception {
          List<Classes> classes=iClassRepository.findAll();
         if(classes==null){
             throw new Exception("You haven't got any reservation yet");
         }
         else return iClassRepository.findAllByTeacherId(id);
+    }
+
+    public List<Classes> getClassesByStudentId(Long id) throws Exception {
+        List<Classes> classes=iClassRepository.findAll();
+        if(classes==null){
+            throw new Exception("You haven't got any reservation yet");
+        }
+        else return iClassRepository.findAllByStudentId(id);
     }
 }
