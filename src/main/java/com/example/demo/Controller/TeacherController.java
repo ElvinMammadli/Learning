@@ -22,13 +22,13 @@ public class TeacherController {
     private static final Logger log = LoggerFactory.getLogger(TeacherController.class);
 
     @PostMapping("/api/1/student/login")
-    public Teacher validateStudent(@RequestBody Student requestedStudent) throws Exception {
-        Teacher teacher=teacherService.findByUsername(requestedStudent.getUsername());
+    public Teacher validateTeacher(@RequestBody Teacher requestedTeacher) throws Exception {
+        Teacher teacher=teacherService.findByUsername(requestedTeacher.getUsername());
         if(teacher==null){
             throw new Exception("User not found");
         }
         else{
-            if(teacher.getPassword().equals(requestedStudent.getPassword())){
+            if(teacher.getPassword().equals(requestedTeacher.getPassword())){
                 return teacher;
             }
             else {
@@ -38,11 +38,13 @@ public class TeacherController {
     }
 
 
-    @PostMapping("/api/1/student/create")
+    @PostMapping("/api/1/teacher/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createStudent(@RequestBody Teacher teacherRequested) {
+    public void createTeacher(@RequestBody Teacher teacherRequested) {
         teacherService.save(teacherRequested);
     }
+
+
 
 
 
