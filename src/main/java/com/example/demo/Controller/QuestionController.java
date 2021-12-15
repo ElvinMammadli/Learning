@@ -32,7 +32,7 @@ public class QuestionController {
 
     @GetMapping("api/1/question/all")
     public List<Question> getAll(){
-        List<Question> list =questionService.getAll();
+        List<Question> list =questionService.findAll();
         Collections.shuffle(list);
         return list.subList(0, 10);
     }

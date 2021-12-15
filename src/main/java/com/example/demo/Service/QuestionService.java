@@ -25,8 +25,8 @@ public class QuestionService  {
         return iQuestionRepository.findQuestionById(id);
     }
 
-    public List<Question> getAll(){
-        return iQuestionRepository.getAll();
+    public List<Question> findAll(){
+        return iQuestionRepository.findAll();
     }
 
 }
