@@ -20,9 +20,14 @@ public class Teacher {
     private String password;
 
     private String name;
-    private String surname;
 
+    public Teacher(){}
 
+    public Teacher(String username, String password, String name) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+    }
 
     public Teacher(long id, String username, String password) {
         this.id = id;
@@ -31,12 +36,11 @@ public class Teacher {
     }
 
 
-    public Teacher(long id, String username, String password, String name, String surname) {
+    public Teacher(long id, String username, String password, String name) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
-        this.surname = surname;
     }
 
 
@@ -48,13 +52,6 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 
 
 

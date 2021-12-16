@@ -19,7 +19,6 @@ public class Student {
 
     private String password;
     private String name;
-    private String surname;
 
     public Student() {
     }
@@ -46,15 +45,6 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
 
 
     public long getId() {

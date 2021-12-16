@@ -1,8 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Model.Student;
 import com.example.demo.Model.Teacher;
-import com.example.demo.Service.StudentService;
 import com.example.demo.Service.TeacherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

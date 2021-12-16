@@ -20,7 +20,7 @@ public class StudentController {
     private static final Logger log = LoggerFactory.getLogger(StudentController.class);
 
     @PostMapping("/api/1/student/login")
-    public Student validateStudent(@RequestBody Student requestedStudent) throws Exception {
+    public Student login(@RequestBody Student requestedStudent) throws Exception {
         Student student=studentService.findByUsername(requestedStudent.getUsername());
         if(student==null){
             throw new Exception("User not found");

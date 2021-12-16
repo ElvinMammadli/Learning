@@ -9,6 +9,5 @@ public interface IQuestionRepository extends JpaRepository<Question,Long> {
 
     public Question findQuestionById(Long id);
 
-    public List<Question> getAll();
 
 }
