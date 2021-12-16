@@ -18,59 +18,56 @@ public class Question {
     private long id;
 
 
-    private String true_answer;
-    private String wrong_answer1;
-    private String wrong_answer2;
-    private String wrong_answer3;
+    private String trueAnswer;
+    private String wrongAnswer1;
+    private String wrongAnswer2;
+    private String wrongAnswer3;
 
 
-    public Question(long id, String true_answer, String wrong_answer1, String wrong_answer2, String wrong_answer3) {
+    public Question(long id, String trueAnswer, String wrongAnswer1, String wrongAnswer2, String wrongAnswer3) {
         this.id = id;
-        this.true_answer = true_answer;
-        this.wrong_answer1 = wrong_answer1;
-        this.wrong_answer2 = wrong_answer2;
-        this.wrong_answer3 = wrong_answer3;
+        this.trueAnswer = trueAnswer;
+        this.wrongAnswer1 = wrongAnswer1;
+        this.wrongAnswer2 = wrongAnswer2;
+        this.wrongAnswer3 = wrongAnswer3;
     }
 
-    public String getWrong_answer1() {
-        return wrong_answer1;
+    public String getTrueAnswer() {
+        return trueAnswer;
     }
 
-    public void setWrong_answer1(String wrong_answer1) {
-        this.wrong_answer1 = wrong_answer1;
+    public void setTrueAnswer(String trueAnswer) {
+        this.trueAnswer = trueAnswer;
     }
 
-    public String getWrong_answer2() {
-        return wrong_answer2;
+    public String getWrongAnswer1() {
+        return wrongAnswer1;
     }
 
-    public void setWrong_answer2(String wrong_answer2) {
-        this.wrong_answer2 = wrong_answer2;
+    public void setWrongAnswer1(String wrongAnswer1) {
+        this.wrongAnswer1 = wrongAnswer1;
     }
 
-    public String getWrong_answer3() {
-        return wrong_answer3;
+    public String getWrongAnswer2() {
+        return wrongAnswer2;
     }
 
-    public void setWrong_answer3(String wrong_answer3) {
-        this.wrong_answer3 = wrong_answer3;
+    public void setWrongAnswer2(String wrongAnswer2) {
+        this.wrongAnswer2 = wrongAnswer2;
+    }
+
+    public String getWrongAnswer3() {
+        return wrongAnswer3;
+    }
+
+    public void setWrongAnswer3(String wrongAnswer3) {
+        this.wrongAnswer3 = wrongAnswer3;
     }
 
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
-    }
-
-
-
-    public String getTrue_answer() {
-        return true_answer;
-    }
-
-    public void setTrue_answer(String true_answer) {
-        this.true_answer = true_answer;
     }
 }
