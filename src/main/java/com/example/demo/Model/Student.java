@@ -9,6 +9,8 @@ import java.util.Set;
 @Entity
 @Table(name="Student")
 public class Student {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

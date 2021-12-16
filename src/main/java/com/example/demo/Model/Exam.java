@@ -8,6 +8,10 @@ import java.util.Set;
 @Entity
 @Table(name="Exam")
 public class Exam {
+
+    public Exam() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

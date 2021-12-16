@@ -10,6 +10,9 @@ public class Answer {
     @Column(name = "id")
     private long id;
 
+    public Answer() {
+    }
+
     private String answer;
 
     public long getId() {

@@ -16,6 +16,8 @@ public class Classes {
     private String name;
     private String explanation;
 
+    public Classes() {
+    }
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(

@@ -6,6 +6,10 @@ import javax.persistence.*;
 @Entity
 @Table(name="Result")
 public class Result {
+
+    public Result() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
