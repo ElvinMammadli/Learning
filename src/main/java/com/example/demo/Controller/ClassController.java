@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@RestController
 public class ClassController {
 
     @Autowired
@@ -22,8 +23,9 @@ public class ClassController {
         classService.save(requestedClass);
     }
 
-    @GetMapping("/api/1/class/teacher:{id}")
+    @GetMapping("/api/1/class/teacher/{id}")
     public  List<Classes>  getClassByTeacherId(@PathVariable Long id) throws Exception {
+        System.out.println("fsdvc");
         List<Classes> classes  =classService.getClassesByTeacherId(id);
         return classes;
     }

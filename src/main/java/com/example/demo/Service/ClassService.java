@@ -39,7 +39,7 @@ public class ClassService {
     public List<Classes> getClassesByTeacherId(Long id) throws Exception {
          List<Classes> classes=iClassRepository.findAll();
         if(classes==null){
-            throw new Exception("You haven't got any reservation yet");
+            throw new Exception("You haven't got any class yet");
         }
         else return iClassRepository.findAllByTeacherId(id);
     }
@@ -47,7 +47,7 @@ public class ClassService {
     public List<Classes> getClassesByStudentsId(Long id) throws Exception {
         List<Classes> classes=iClassRepository.findAll();
         if(classes==null){
-            throw new Exception("You haven't got any reservation yet");
+            throw new Exception("You haven't got any class yet");
         }
         else return iClassRepository.findAllByStudentsId(id);
     }

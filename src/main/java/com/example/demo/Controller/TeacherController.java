@@ -1,15 +1,15 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Model.Classes;
 import com.example.demo.Model.Teacher;
 import com.example.demo.Service.TeacherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TeacherController {
@@ -33,6 +33,13 @@ public class TeacherController {
                 throw new Exception("Wrong Password");
             }
         }
+    }
+
+    @GetMapping("/api/1/teacher:{id}")
+    public Teacher getTeacherById(@PathVariable Long id) throws Exception {
+        System.out.println("fsdvc");
+        Teacher teacher  =teacherService.findTeacherById(id);
+        return teacher;
     }
 
 

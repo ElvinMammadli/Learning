@@ -17,21 +17,43 @@ public class Question {
     @Column(name = "id")
     private long id;
 
-    @OneToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "Question_Answer",
-            joinColumns = { @JoinColumn(name = "question_id") },
-            inverseJoinColumns = { @JoinColumn(name = "answer_id") }
-    )
-    private Set<Answer> answers ;
 
     private String true_answer;
+    private String wrong_answer1;
+    private String wrong_answer2;
+    private String wrong_answer3;
 
 
-    public Question(long id, Set<Answer> answers, String true_answer) {
+    public Question(long id, String true_answer, String wrong_answer1, String wrong_answer2, String wrong_answer3) {
         this.id = id;
-        this.answers = answers;
         this.true_answer = true_answer;
+        this.wrong_answer1 = wrong_answer1;
+        this.wrong_answer2 = wrong_answer2;
+        this.wrong_answer3 = wrong_answer3;
+    }
+
+    public String getWrong_answer1() {
+        return wrong_answer1;
+    }
+
+    public void setWrong_answer1(String wrong_answer1) {
+        this.wrong_answer1 = wrong_answer1;
+    }
+
+    public String getWrong_answer2() {
+        return wrong_answer2;
+    }
+
+    public void setWrong_answer2(String wrong_answer2) {
+        this.wrong_answer2 = wrong_answer2;
+    }
+
+    public String getWrong_answer3() {
+        return wrong_answer3;
+    }
+
+    public void setWrong_answer3(String wrong_answer3) {
+        this.wrong_answer3 = wrong_answer3;
     }
 
     public long getId() {
@@ -42,13 +64,7 @@ public class Question {
         this.id = id;
     }
 
-    public Set<Answer> getAnswers() {
-        return answers;
-    }
 
-    public void setAnswers(Set<Answer> answers) {
-        this.answers = answers;
-    }
 
     public String getTrue_answer() {
         return true_answer;

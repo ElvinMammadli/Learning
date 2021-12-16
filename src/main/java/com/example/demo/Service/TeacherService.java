@@ -25,6 +25,12 @@ public class TeacherService {
     public Teacher findByUsername(String username) throws Exception{
         return iTeacherRepository.findByUsername(username);
     }
+
+    public Teacher findTeacherById(Long id) throws Exception{
+        return iTeacherRepository.findTeacherById(id);
+    }
+
+
     public List<Teacher> findUsers(){return iTeacherRepository.findAll();}
 
     public Teacher findByUsernameAndPassword(String username, String password) {

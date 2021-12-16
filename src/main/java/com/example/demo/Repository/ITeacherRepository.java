@@ -9,4 +9,5 @@ public interface ITeacherRepository extends JpaRepository<Teacher,Long> {
 
     Teacher findByUsernameAndPassword(String username, String password);
 
+    Teacher findTeacherById(Long id);
 }
